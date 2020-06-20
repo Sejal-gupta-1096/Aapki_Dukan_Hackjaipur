@@ -29,19 +29,19 @@ module.exports.category = async function(request , response){
     });
 }
 
-// module.exports.productDetails = async function(request , response){
+module.exports.productDetails = async function(request , response){
 
-//     let product = await Product.findById(request.query.id);
-//     let category_list = await Category.find({});
-//     let category = await Category.findOne({name : product.category_name});
-//     console.log(product);
-//     return response.render("product_details.ejs" , {
-//         layout:"layout_website",
-//         categories_list : category_list,
-//         product : product,
-//         category : category
-//     });
-// }
+    let product = await Product.findById(request.query.id);
+    let category_list = await Category.find({});
+    let category = await Category.findOne({name : product.category_name});
+    console.log(product);
+    return response.render("product_details.ejs" , {
+        layout:"layout_website",
+        categories_list : category_list,
+        product : product,
+        category : category
+    });
+}
 
 // module.exports.contactUsPage = async function(request , response){
 //     let category_list = await Category.find({});
