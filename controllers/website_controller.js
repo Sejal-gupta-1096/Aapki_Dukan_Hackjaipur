@@ -16,18 +16,18 @@ module.exports.home = async function(request , response){
     });
 }
 
-// module.exports.category = async function(request , response){
+module.exports.category = async function(request , response){
     
-//     let category = await (await Category.findById(request.query.id).populate("products")).execPopulate();
-//     let category_list = await Category.find({});
-//     console.log(category);
-//     return response.render("category" , 
-//     {
-//         layout : "layout_website",
-//         categories_list : category_list,
-//         category : category
-//     });
-// }
+    let category = await (await Category.findById(request.query.id).populate("products")).execPopulate();
+    let category_list = await Category.find({});
+    console.log(category);
+    return response.render("category" , 
+    {
+        layout : "layout_website",
+        categories_list : category_list,
+        category : category
+    });
+}
 
 // module.exports.productDetails = async function(request , response){
 

@@ -6,7 +6,7 @@ const websiteController = require("../controllers/website_controller");
 
 
 router.get("/", websiteController.home);
-// router.get("/category", websiteController.category);
+router.get("/category", websiteController.category);
 // router.get("/product-details", websiteController.productDetails);
 // router.get("/contact-us", websiteController.contactUsPage);
 // router.get("/login-register", websiteController.logInRegister);
