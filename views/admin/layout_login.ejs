@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Login Page</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+      <link rel="stylesheet" href="/admin/css/normalize.css">
+      <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/admin/css/themify-icons.css">
+      <link rel="stylesheet" href="/admin/css/pe-icon-7-filled.css">
+      <link rel="stylesheet" href="/admin/css/flag-icon.min.css">
+      <link rel="stylesheet" href="/admin/css/cs-skin-elastic.css">
+      <link rel="stylesheet" href="/admin/css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+      <%- style %>
+   </head>
+   <body>
+     
+   <%- body %>
+
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+   <script>
+      <% if(flash.success && flash.success.length > 0) { %>
+      new Noty({
+          layout: 'topRight',
+          theme: 'relax', // or relax
+          type: 'success', // success, error, warning, information, notification
+          text: '<%= flash.success %>', // [string|html] can be HTML or STRING
+          timeout : 1500
+      }).show();
+  <% } %>
+  <% if(flash.error && flash.error.length > 0) { %>
+      new Noty({
+          layout: 'topRight',
+          theme: 'relax', // or relax
+          type: 'error', // success, error, warning, information, notification
+          text: '<%= flash.error %>', // [string|html] can be HTML or STRING
+          timeout : 1500
+      }).show();
+  <% } %>
+  </script>
+   <%- script %>
+   </body>
+
+   </html>

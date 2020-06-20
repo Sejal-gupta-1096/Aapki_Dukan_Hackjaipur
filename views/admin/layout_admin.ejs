@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="">
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Dashboard Page</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+      <link rel="stylesheet" href="/admin/css/normalize.css">
+      <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/admin/css/themify-icons.css">
+      <link rel="stylesheet" href="/admin/css/pe-icon-7-filled.css">
+      <link rel="stylesheet" href="/admin/css/flag-icon.min.css">
+      <link rel="stylesheet" href="/admin/css/cs-skin-elastic.css">
+      <link rel="stylesheet" href="/admin/css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+   </head>
+   <body>
+      <aside id="left-panel" class="left-panel">
+         <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                  <li class="menu-title">Menu</li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="/admin/categories_master" > Categories Master</a>
+                  </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="/admin/product_master" > Product Master</a>
+                  </li>
+				  <li class="menu-item-has-children dropdown">
+                     <a href="/admin/order_master" > Order Master</a>
+                  </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="/admin/user_master" > User Master</a>
+                  </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="/admin/contact_master" > Contact Us</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </aside>
+      <div id="right-panel" class="right-panel">
+         <header id="header" class="header">
+            <div class="top-left">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html"><img src="/admin/images/logo.png" alt="Logo"></a>
+                  <a class="navbar-brand hidden" href="index.html"><img src="/admin/images/logo2.png" alt="Logo"></a>
+                  <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+               </div>
+            </div>
+            <div class="top-right">
+               <div class="header-menu">
+                  <div class="user-area dropdown float-right">
+                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin</a>
+                     <div class="user-menu dropdown-menu">
+                        <a class="nav-link" href="/admin/logout"><i class="fa fa-power-off"></i>Logout</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+
+        
+
+         <%-body%>
+
+      <script src="/admin/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
+      <script>
+         <% if(flash.success && flash.success.length > 0) { %>
+         new Noty({
+             layout: 'topRight',
+             theme: 'relax', // or relax
+             type: 'success', // success, error, warning, information, notification
+             text: '<%= flash.success %>', // [string|html] can be HTML or STRING
+             timeout : 1500
+         }).show();
+     <% } %>
+     <% if(flash.error && flash.error.length > 0) { %>
+         new Noty({
+             layout: 'topRight',
+             theme: 'relax', // or relax
+             type: 'error', // success, error, warning, information, notification
+             text: '<%= flash.error %>', // [string|html] can be HTML or STRING
+             timeout : 1500
+         }).show();
+     <% } %>
+     <% if(flash.success && flash.success.length > 0) { %>
+         new Noty({
+             layout: 'topRight',
+             theme: 'relax', // or relax
+             type: 'information', // success, error, warning, information, notification
+             text: '<%= flash.information %>', // [string|html] can be HTML or STRING
+             timeout : 1500
+         }).show();
+     <% } %>
+     </script>
+      <script src="/admin/js/popper.min.js" type="text/javascript"></script>
+      <script src="/admin/js/plugins.js" type="text/javascript"></script>
+      <script src="/admin/js/main.js" type="text/javascript"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+   </body>
+</html>

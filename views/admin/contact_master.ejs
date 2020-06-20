@@ -1,0 +1,47 @@
+<div class="content pb-0">
+    <div class="orders">
+       <div class="row">
+          <div class="col-xl-12">
+             <div class="card">
+                <div class="card-body">
+                   <h3>Queries </h3>
+                </div>
+                <div class="card-body--">
+                   <div class="table-stats order-table ov-h">
+                      <table class="table ">
+                         <thead>
+                            <tr>
+                               <th class="serial">Serial</th>
+                               <th>Name</th>
+                               <th>Email</th>
+                               <th>Query</th>
+                               <th></th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <% for(let i = 0 ; i < users_list.length ; i++){ %>
+                              <% if(users_list[i].query.length > 0){ %>
+                                 <tr>
+                                    <td class="serial"><%= i+1 %></td>
+                                    <td> <span class="name"><%= users_list[i].name %></span> </td>
+                                    <td> <span class="name"><%= users_list[i].email %></span> </td>
+                                    <td> <span class="name"><%= users_list[i].query.length %></span> </td>
+                                    <td>
+                                       <span class="badge badge-info"><a style="color:white;" href="/admin/contact_master/view?id=<%= users_list[i]._id %>">View</a></span>
+                                    </td>
+                                   </tr>
+                              <% } %>
+                             
+                           <% } %>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+ <div class="clearfix"></div>
+</div>
+

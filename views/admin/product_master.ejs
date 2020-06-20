@@ -1,0 +1,61 @@
+<div class="content pb-0">
+    <div class="orders">
+       <div class="row">
+          <div class="col-xl-12">
+             <div class="card">
+                <div class="card-body">
+                   <h3>Product </h3>
+                   <h4 style="margin-top: 1rem" class="box-title">
+                     <a style="text-decoration: underline;color: black;" href="/admin/product_master/addForm">Add Product </a></h4>
+                </div>
+                <div class="card-body--">
+                   <div class="table-stats order-table ov-h">
+                      <table class="table ">
+                         <thead>
+                            <tr>
+                               <th class="serial">Serial</th>
+                               <th class="avatar">Avatar</th>
+                               <th>Name</th>
+                               <th>MRP</th>
+                               <th>SP</th>
+                               <th>Quantity</th>
+                               <th></th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <% for(let i = 0 ; i < product_list.length ; i++){ %>
+                              <tr>
+                                 <td class="serial"><%= i+1 %></td>
+                                 <td class="avatar">
+                                    <div class="round-img">
+                                      <img class="rounded-circle" src="<%=product_list[i].product_img %>" alt="">
+                                    </div>
+                                 </td>
+                                 <td> <span class="name"><%= product_list[i].name %></span> </td>
+                                 <td> <span class="name"><%= product_list[i].mrp %></span> </td>
+                                 <td> <span class="name"><%= product_list[i].sp %></span> </td>
+                                 <td> <span class="name"><%= product_list[i].qty %></span> </td>
+                                 <td>
+                                    <% if(product_list[i].status == 1){ %>
+                                       <span class="badge badge-success"><a class="toggle-btn" style="color:white;" href="/admin/product_master/status?id=<%= product_list[i]._id %>">Active</a></span>&nbsp;&nbsp;
+                                    <% }else { %>
+                                       <span class="badge badge-secondary"><a class="toggle-btn" style="color:white;" href="/admin/product_master/status?id=<%= product_list[i]._id %>">Deactive</a></span>&nbsp;&nbsp;
+                                     <% } %>
+                                    
+                                    <span class="badge badge-info"><a style="color:white;" href="/admin/product_master/updateForm?id=<%= product_list[i]._id %>">Edit</a></span>&nbsp;&nbsp;
+                                    <span class="badge badge-danger"><a style="color:white;" href="/admin/product_master/delete?id=<%= product_list[i]._id %>">Delete</a></span>
+                                 </td>
+                                </tr>
+                           <% } %>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+ <div class="clearfix"></div>
+</div>
+
