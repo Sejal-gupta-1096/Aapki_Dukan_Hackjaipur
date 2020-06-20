@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Asbab - eCommerce HTML5 Templatee</title>
+    <title>AAPKI DUKAN</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -51,19 +51,25 @@
                         <div class="menumenu__container clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
                                 <div class="logo">
-                                     <a href="index.html"><img src="/website/images/logo/4.png" alt="logo images"></a>
+                                     <a href="/"><img src="/website/images/4.png" alt="logo images"></a>
                                 </div>
                             </div>
                             <div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
                                 <nav class="main__menu__nav hidden-xs hidden-sm">
                                     <ul class="main__menu">
                                         <li class="drop"><a href="/">Home</a></li>
-                                        <% for(let i = 0 ; i < categories_list.length ; i++){ %>
-                                            <% if(categories_list[i].status == 1) {%>
-                                                <li><a href="/category?id=<%= categories_list[i]._id %>"><%= categories_list[i].name %></a></li>
-                                            <% } %>
-                                            
-                                        <% } %>
+                                        <li class="drop"><a href="#">CATEGORY</a>
+                                            <ul class="dropdown">
+                                                <% for(let i = 0 ; i < categories_list.length ; i++){ %>
+                                                    <% if(categories_list[i].status == 1) {%>
+                                                        <li><a href="/category?id=<%= categories_list[i]._id %>"><%= categories_list[i].name %></a></li>
+                                                    <% } %>
+                                                    
+                                                <% } %>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li class="drop"><a href="/about-us">ABOUT US</a>
                                         <li><a href="/contact-us">contact</a></li>
                                        
                                     </ul>
@@ -75,7 +81,7 @@
                                             <li><a href="/">Home</a></li>
                                             <% for(let i = 0 ; i < categories_list.length ; i++){ %>
                                                 <% if(categories_list[i].status == 1) {%>
-                                                    <li><a href=""><%= categories_list[i].name %></a></li>
+                                                    <li><a href="/category/?id=<%=categories_list[i]._id%>"><%= categories_list[i].name %></a></li>
                                                 <% } %>
                                                 
                                             <% } %>
@@ -126,7 +132,7 @@
                                 <div class="footer">
                                     <h2 class="title__line--2">ABOUT US</h2>
                                     <div class="ft__details">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
+                                        <p>Aapki Dukaan encourages all the small scale enterpeneurs to come online and expand their business. Soon we will be available on all social media platforms. </p>
                                         <div class="ft__social__link">
                                             <ul class="social__link">
                                                 <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
@@ -150,42 +156,23 @@
                                     <h2 class="title__line--2">information</h2>
                                     <div class="ft__inner">
                                         <ul class="ft__list">
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">Delivery Information</a></li>
-                                            <li><a href="#">Privacy & Policy</a></li>
-                                            <li><a href="#">Terms  & Condition</a></li>
-                                            <li><a href="#">Manufactures</a></li>
+                                            <li><a href="about-us.html">About us</a></li>
+                                            <li><a href="about-us.html ">Terms  & Condition</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Single Footer Widget -->
-                            <!-- Start Single Footer Widget -->
-                            <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
-                                <div class="footer">
-                                    <h2 class="title__line--2">my account</h2>
-                                    <div class="ft__inner">
-                                        <ul class="ft__list">
-                                            <li><a href="#">My Account</a></li>
-                                            <li><a href="cart.html">My Cart</a></li>
-                                            <li><a href="#">Login</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Footer Widget -->
+                       
                             <!-- Start Single Footer Widget -->
                             <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
                                 <div class="footer">
                                     <h2 class="title__line--2">Our service</h2>
                                     <div class="ft__inner">
                                         <ul class="ft__list">
-                                            <li><a href="#">My Account</a></li>
+                                            <li><a href="MY ACCOUNT.html ">My Account</a></li>
                                             <li><a href="cart.html">My Cart</a></li>
-                                            <li><a href="#">Login</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="login.html ">Login</a></li>
                                             <li><a href="checkout.html">Checkout</a></li>
                                         </ul>
                                     </div>
@@ -218,8 +205,8 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="copyright__inner">
-                                    <p>Copyright© <a href="https://freethemescloud.com/">Free themes Cloud</a> 2018. All right reserved.</p>
-                                    <a href="#"><img src="/website/images/others/shape/paypol.png" alt="payment images"></a>
+                                    <p>Copyright© <a href="#">Socio-preneurs</a> 2020. All rights reserved.</p>
+                                    <a href="#"><img src="images/others/shape/paypol.png" alt="payment images"></a>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +220,7 @@
     
         <!-- Placed js at the end of the document so the pages load faster -->
     
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <script>
             <% if(flash.success && flash.success.length > 0) { %>
             new Noty({
@@ -252,7 +239,7 @@
                 text: '<%= flash.error %>', // [string|html] can be HTML or STRING
                 timeout : 1500
             }).show();
-        <% } %> -->
+        <% } %>
         </script>
         <!-- jquery latest version -->
         <script src="/website/js/vendor/jquery-3.2.1.min.js"></script>
