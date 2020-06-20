@@ -6,7 +6,7 @@
                 <div class="card-body">
                    <h3>Categories </h3>
                    <h4 style="margin-top: 1rem" class="box-title">
-                     <a style="text-decoration: underline;color: black;" href="/admin/categories_master/addForm">Add Category </a></h4>
+                     <a style="text-decoration: underline;color: black;" href="/admin/master/categories_master/addForm">Add Category </a></h4>
                 </div>
                 <div class="card-body--">
                    <div class="table-stats order-table ov-h">
@@ -36,8 +36,8 @@
                                        <span class="badge badge-secondary"><a class="toggle-btn" style="color:white;" href="/admin/categories_master/status?id=<%= categories_list[i]._id %>">Deactive</a></span>&nbsp;&nbsp;
                                      <% } %>
                                     
-                                    <span class="badge badge-info"><a style="color:white;" href="/admin/categories_master/updateForm?id=<%= categories_list[i]._id %>">Edit</a></span>&nbsp;&nbsp;
-                                    <span class="badge badge-danger"><a style="color:white;" href="/admin/categories_master/delete?id=<%= categories_list[i]._id %>">Delete</a></span>
+                                    <span class="badge badge-info"><a style="color:white;" href="/admin/master/categories_master/updateForm?id=<%= categories_list[i]._id %>">Edit</a></span>&nbsp;&nbsp;
+                                    <span class="badge badge-danger"><a style="color:white;" href="/admin/master/categories_master/delete?id=<%= categories_list[i]._id %>">Delete</a></span>
                                  </td>
                                 </tr>
                            <% } %>
