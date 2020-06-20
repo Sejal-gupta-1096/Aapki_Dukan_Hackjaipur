@@ -60,3 +60,11 @@ module.exports.logInRegister = async function(request , response){
     });
 }
 
+module.exports.aboutUs = async function(request , response){
+    let category_list = await Category.find({});
+    return response.render("about_us.ejs" , {
+        layout:"layout_website",
+        categories_list : category_list,
+    });
+}
+

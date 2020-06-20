@@ -10,6 +10,8 @@ router.get("/category", websiteController.category);
 router.get("/product-details", websiteController.productDetails);
 router.get("/contact-us", websiteController.contactUsPage);
 router.get("/login-register", websiteController.logInRegister);
+router.get("/about-us", websiteController.aboutUs);
+
 //router.get("/login-register", websiteController.logInRegister);
 
 //router.use("/user" , passport.checkAuthentication ,require("./user"))
