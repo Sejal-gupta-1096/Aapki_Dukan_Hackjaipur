@@ -17,13 +17,13 @@ const cookieParser = require("cookie-parser");
 //12)Using passport for authentication and express session for session cookie
 const session = require("express-session");
 const passport = require("passport");
-//const passportLocal = require("./config/passport-local-strategy");
+const passportLocal = require("./config/passport-local-strategy");
 
 //13)Permanantly storing session in db
 const MongoStore = require("connect-mongo")(session);
 
 const flash = require("connect-flash");
-//const customMVare = require("./config/middleware");
+const customMVare = require("./config/middleware");
 
 //10)Setting middleware for decoding the post request
 const bodyParser = require("body-parser");
@@ -49,7 +49,7 @@ app.set("layout extractScripts" ,true);
 
 //5)Setting up View Enjine
 app.set("view engine" , "ejs");
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/website'));
 
 //using express session to encrypt user data and stores in the cookie (This cookie is then stored in database)
 app.use(session({
@@ -73,10 +73,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //setting user to locals of response
-//app.use(passport.setAuthenticatedUser);
+app.use(passport.setAuthenticatedUser);
 
  app.use(flash());
- //app.use(customMVare.setFlash);
+ app.use(customMVare.setFlash);
 
 
 app.use("/uploads" , express.static(__dirname + "/uploads"));
