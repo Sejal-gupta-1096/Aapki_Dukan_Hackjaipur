@@ -43,16 +43,13 @@ module.exports.productDetails = async function(request , response){
     });
 }
 
-// module.exports.contactUsPage = async function(request , response){
-//     let category_list = await Category.find({});
-//     return response.render("contact_us.ejs" , {
-//         layout:"layout_website",
-//         categories_list : category_list,
-//     });
-// }
-
-
-
+module.exports.contactUsPage = async function(request , response){
+    let category_list = await Category.find({});
+    return response.render("contact_us.ejs" , {
+        layout:"layout_website",
+        categories_list : category_list,
+    });
+}
 
 
 // module.exports.logInRegister = async function(request , response){
