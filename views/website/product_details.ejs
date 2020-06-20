@@ -64,7 +64,7 @@
                             </div>
 
                             <% if(locals.user){ %>
-                                <form method="POST" action="/add-to-cart/?product_id=<%=product._id %>">
+                                <form method="POST" action="/user/cart/add/?product_id=<%=product._id %>">
                                     <input type="number" name="qty" value="1" style="width:50px;background-color: lightgray;margin-top: 1rem;margin-bottom: 1rem;">
                                     <div class="cr__btn">
                                         <input style="background: #c43b68 none repeat scroll 0 0;

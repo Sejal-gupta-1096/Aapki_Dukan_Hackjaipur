@@ -1,0 +1,72 @@
+ <!-- Start Bradcaump area -->
+ <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/website/images/cart.png) no-repeat scroll center center / cover ;">
+    <div class="ht__bradcaump__wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- cart-main-area start -->
+<div class="cart-main-area ptb--100 bg__white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <form action="#">               
+                    <div class="table-content table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product-thumbnail">products</th>
+                                    <th class="product-name">name of products</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let i = 0 ; i < whole_user.cart.length ; i++){ %>
+                                    <tr>
+                                        <td class="product-thumbnail"><a href="/product-details/?id=<%=whole_user.cart[i].product._id%>"><img src="<%=whole_user.cart[i].product.product_img%>" alt="product img" /></a></td>
+                                        <td class="product-name"><a><%=whole_user.cart[i].product.name%></a>
+                                            <ul  class="pro__prize">
+                                                <li class="old__prize">Rs.<%= whole_user.cart[i].product.mrp %></li>
+                                                <li>Rs.<%= whole_user.cart[i].product.sp %></li>
+                                            </ul>
+                                        </td>
+                                        <td class="product-price"><span class="amount">Rs.</span><span class="amount amt"><%=whole_user.cart[i].product.sp%></span></td>
+                                        <td class="product-quantity">
+                                            <input class="qty" type="number" value="<%=whole_user.cart[i].qty%>"/><br>
+                                            <a style="font-weight: bold;font-size: 1rem;" href="/update-cart-item/?id=<%=whole_user.cart[i]._id%>">update</a>
+                                        </td>
+                                        <td class="product-subtotal"><span class="total">0</span></td>
+                                        <td class="product-remove"><a href="user/cart/delete/?id=<%=whole_user.cart[i]._id%>"><i class="icon-trash icons"></i></a></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="buttons-cart--inner">
+                                <div class="buttons-cart">
+                                    <a href="/">Continue Shopping</a>
+                                </div>
+                                <div class="buttons-cart checkout--btn">
+                                    <a href="#">checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart-main-area end -->
+<!-- End Banner Area -->
+<script src="/website/js/math_operations.js"></script>

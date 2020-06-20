@@ -5,7 +5,7 @@ const userController = require("../controllers/user_controller");
 
 
 
-router.post("/contact-us-form", userController.contactUs);
+router.post("/contact-us-form", passport.checkAuthentication ,userController.contactUs);
 router.post("/login", passport.authenticate(
     'local' , 
     {
@@ -13,7 +13,8 @@ router.post("/login", passport.authenticate(
     }
 ), userController.createSession);
 router.post("/register", userController.register);
-router.get("/logout", userController.destroySession);
-//router.use("/cart" , require("./user_cart"));
+router.get("/logout", passport.checkAuthentication,userController.destroySession);
+router.use("/cart" , passport.checkAuthentication ,  require("./user_cart"));
+
 //2)Exporting the router module
 module.exports = router;
