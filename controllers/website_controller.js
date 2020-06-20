@@ -52,11 +52,11 @@ module.exports.contactUsPage = async function(request , response){
 }
 
 
-// module.exports.logInRegister = async function(request , response){
-//     let category_list = await Category.find({});
-//     return response.render("login_register.ejs" , {
-//         layout:"layout_website",
-//         categories_list : category_list,
-//     });
-// }
+module.exports.logInRegister = async function(request , response){
+    let category_list = await Category.find({});
+    return response.render("login_register.ejs" , {
+        layout:"layout_website",
+        categories_list : category_list,
+    });
+}
 
