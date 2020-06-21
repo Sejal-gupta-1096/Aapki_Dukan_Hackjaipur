@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 //2)defining port no.
-const port = 800;
+const port = process.env.PORT;
  
 const path = require("path");
 //6) Installing and acquiring express-ejs-layouts
