@@ -33,11 +33,11 @@ module.exports.contactUs = async function(request , response){
 
 module.exports.addToCart = async function(request , response){
     if(request.user){
-        let cartProduct = await Cart.findOne({product : request.query.product_id});
-        if(cartProduct){
-            cartProduct.qty = request.body.qty;
-            cartProduct.save();
-        }else{
+        // let cartProduct = await Cart.findOne({product : request.query.product_id});
+        // if(cartProduct){
+        //     cartProduct.qty = request.body.qty;
+        //     cartProduct.save();
+        // }else{
             let user = await User.findById(request.user);
 
             let cart = await Cart.create({
@@ -47,7 +47,7 @@ module.exports.addToCart = async function(request , response){
 
             user.cart.push(cart);
             (await user).save();
-        }
+        //}
         request.flash("success" , "Item added to cart successfully");
         return response.redirect("back");
 
