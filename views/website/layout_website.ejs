@@ -97,13 +97,13 @@
                                     <% if(locals.user){%>
                                         <h3 style="margin-right: 1rem;justify-content: center;"><a href="/user/logout">LogOut</a></h3>
                                     <% }else{ %>
-                                        <h3 style="margin-right: 1rem;justify-content: center;"><a href="/login-register">LogIn | Register</a></h3>
+                                        <h3 style="margin-right: 1rem;justify-content: center;"><a href="/login-register">SignUp</a></h3>
                                     <% } %>
                                     
                                     <% if(locals.user) { %>
                                         <div class="htc__shopping__cart">
-                                            <a class="cart__menu" href="/cart-page"><i class="icon-handbag icons"></i></a>
-                                            <a href="/user/cart/view"><span class="htc__qua"><%= locals.user.cart.length %></span></a>
+                                            <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
+                                            <a href="#"><span class="htc__qua"><%= locals.user.cart.length %></span></a>
                                         </div>
                                     <% } %>
 
@@ -118,7 +118,47 @@
             <!-- End Mainmenu Area -->
         </header>
         <!-- End Header Area -->
-
+         <!-- Start Cart Panel -->
+         <% if(locals.user) {%>
+            <div class="shopping__cart">
+                <div class="shopping__cart__inner">
+                    <div class="offsetmenu__close__btn">
+                        <a href="#"><i class="zmdi zmdi-close"></i></a>
+                    </div>
+                    <div class="shp__cart__wrap">
+                        <% for(let i = 0 ; i < whole_user.cart.length ; i++){ %>
+                            <div class="shp__single__product">
+                                <div class="shp__pro__thumb">
+                                    <a href="#">
+                                        <img src="<%=whole_user.cart[i].product.product_img%>" alt="product images">
+                                    </a>
+                                </div>
+                                <div class="shp__pro__details">
+                                    <h2><a href=""><%=whole_user.cart[i].product.name%></a></h2>
+                                    <span class="quantity">QTY:<span class="qty" ><%=whole_user.cart[i].qty%></span> </span>
+                                    <span class="shp__price">₹<span class="amt"><%=whole_user.cart[i].product.sp%></span></span>
+                                </div>
+                                <div class="remove__btn">
+                                    <a href="/user/cart/delete/?id=<%=whole_user.cart[i]._id%>" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
+                                </div>
+                            </div>
+                        <% } %>
+                        
+                    </div>
+                    <ul class="shoping__total">
+                        <li class="subtotal">Subtotal:</li>
+                        <li class="total__price">₹</li>
+                    </ul>
+                    <ul class="shopping__btn">
+                        <li><a href="/user/cart/view">View Cart</a></li>
+                        <li class="shp__checkout"><a href=
+                            "/user/cart/checkout">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
+        
+        <!-- End Cart Panel -->
        
         
             <%- body %>
@@ -254,6 +294,7 @@
         <script src="/website/js/waypoints.min.js"></script>
         <!-- Main js file that contents all jQuery plugins activation. -->
         <script src="/website/js/main.js"></script>
+        <script src="/website/js/math_operations.js"></script>
         <%- script %>
 
     </body>

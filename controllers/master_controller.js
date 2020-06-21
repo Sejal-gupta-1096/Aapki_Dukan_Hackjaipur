@@ -82,7 +82,7 @@ module.exports.updateCategory = async function(request , response){
 }
 
 module.exports.addFormCategory = function(request , response){;
-    return response.render("addCategoryForm" , {layout : "layout_admin"});
+    return response.render("add_category_form" , {layout : "layout_admin"});
 }
 
 module.exports.addCategory = async function(request , response){;
@@ -153,7 +153,7 @@ module.exports.changeStatusProduct = async function(request , response){
 
 module.exports.addFormProduct = async function(request , response){
     let list = await Category.find({});
-    return response.render("addProductForm" , 
+    return response.render("add_product_form" , 
     {
         layout : "layout_admin",
         categories_list : list

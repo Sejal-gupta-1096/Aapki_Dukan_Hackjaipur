@@ -6,11 +6,11 @@ const userController = require("../controllers/user_controller");
 
 
 
-router.get("/view",userController.cartPage);
-router.post("/add",userController.addToCart);
-router.get("/delete",userController.deleteCartItem)
+router.get("/",userController.checkoutPage);
+//router.post("/add",userController.addToCart);
+//router.get("/delete",userController.deleteCartItem)
 //router.get("/update",userController.updateCartItem)
-router.use("/checkout",require("./checkout"))
+//router.use("/checkout",require("./checkout"))
 
 //2)Exporting the router module
 module.exports = router;

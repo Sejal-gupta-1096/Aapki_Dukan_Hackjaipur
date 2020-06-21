@@ -92,6 +92,29 @@ module.exports.deleteCartItem = async function(request , response){
     }
 }
 
+module.exports.checkoutPage = async function(request , response){
+    if(request.user){
+        let category_list = await Category.find({});
+
+        let user = await User.findById(request.user)
+        .populate({
+            path : "cart",
+            populate : {
+                path : "product",
+                model : "Product"
+            }
+        })
+
+        return response.render("checkout" , {
+            layout : "layout_website",
+            categories_list : category_list,
+            whole_user : user
+        })
+    }else{
+        request.flash("information" , "Please sign up to access this functionality");
+        return response.redirect("/login-register");
+    }
+}
 
 module.exports.register = async function(request , response){
     try{

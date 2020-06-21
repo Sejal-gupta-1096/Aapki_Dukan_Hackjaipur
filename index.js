@@ -49,7 +49,7 @@ app.set("layout extractScripts" ,true);
 
 //5)Setting up View Enjine
 app.set("view engine" , "ejs");
-app.set('views', path.join(__dirname, 'views/website'));
+app.set('views', [__dirname + '/views/website', __dirname + '/views/admin']);
 
 //using express session to encrypt user data and stores in the cookie (This cookie is then stored in database)
 app.use(session({

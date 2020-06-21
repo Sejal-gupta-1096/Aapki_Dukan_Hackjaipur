@@ -6,15 +6,14 @@
                 <div class="card-header"><strong>Category</strong><small> Form</small></div>
                 <div class="card-body card-block">
 
-                    <form method="POST" action="/admin/master/categories_master/update?id=<%=category._id%>" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/master/categories_master/add">
                         <div class="form-group">
-                            <input name="category_img" type="file"   class="form-control" required>
+                            <label for="category" class=" form-control-label">Category</label>
+                            <input name="name" type="text" id="category" placeholder="Enter category name" class="form-control" required>
                          </div>
-
                          <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                             <span id="payment-button-amount">Submit</span>
                         </button>
-                        
                     </form>
                 </div>
              </div>
