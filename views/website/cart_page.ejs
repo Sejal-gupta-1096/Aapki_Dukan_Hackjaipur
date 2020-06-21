@@ -38,9 +38,9 @@
                                                 <li>Rs.<%= whole_user.cart[i].product.sp %></li>
                                             </ul>
                                         </td>
-                                        <td class="product-price"><span class="amount">Rs.</span><span class="amount amt"><%=whole_user.cart[i].product.sp%></span></td>
+                                        <td class="product-price"><span class="amount">Rs.</span><span class="amount"><%=whole_user.cart[i].product.sp%></span></td>
                                         <td class="product-quantity">
-                                            <input class="qty" type="number" value="<%=whole_user.cart[i].qty%>"/><br>
+                                            <input type="number" value="<%=whole_user.cart[i].qty%>"/><br>
                                             <a style="font-weight: bold;font-size: 1rem;" href="/update-cart-item/?id=<%=whole_user.cart[i]._id%>">update</a>
                                         </td>
                                         <td class="product-subtotal"><span class="total">0</span></td>

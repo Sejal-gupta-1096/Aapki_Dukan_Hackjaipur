@@ -6,6 +6,7 @@ const userController = require("../controllers/user_controller");
 
 
 router.post("/contact-us-form", passport.checkAuthentication ,userController.contactUs);
+router.use("/account", passport.checkAuthentication ,require("./account"));
 router.post("/login", passport.authenticate(
     'local' , 
     {

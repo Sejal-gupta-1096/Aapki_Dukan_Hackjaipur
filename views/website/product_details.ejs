@@ -1,23 +1,4 @@
-<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
-    <div class="ht__bradcaump__wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="bradcaump__inner">
-                        <nav class="bradcaump-inner">
-                          <a class="breadcrumb-item" href="/">Home</a>
-                          <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                          <a class="breadcrumb-item" href="/category?id=<%= category._id %>"><%= product.category_name %></a>
-                          <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                          <span class="breadcrumb-item active"><%= product.name %></span>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Bradcaump area -->
+
 <!-- Start Product Details Area -->
 <section class="htc__product__details bg__white ptb--100">
     <!-- Start Product Details Top -->
@@ -95,34 +76,4 @@
     <!-- End Product Details Top -->
 </section>
 <!-- End Product Details Area -->
-<!-- Start Product Description -->
-<section class="htc__produc__decription bg__white">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <!-- Start List And Grid View -->
-                <ul class="pro__details__tab" role="tablist">
-                    <li role="presentation" class="description active"><a href="#description" role="tab" data-toggle="tab">description</a></li>
-                </ul>
-                <!-- End List And Grid View -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="ht__pro__details__content">
-                    <!-- Start Single Content -->
-                    <div role="tabpanel" id="description" class="pro__single__content tab-pane fade in active">
-                        <div class="pro__tab__content__inner">
-                            <p><%= product.short_description %></p>
-                            
-                            <h4 class="ht__pro__title">Standard Featured</h4>
-                            <p><%= product.long_description %></p>
-                        </div>
-                    </div>
-                    <!-- End Single Content -->
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+

@@ -1,0 +1,98 @@
+<section class="htc__product__details bg__white ptb--100">
+    <!-- Start Product Details Top -->
+    <div class="htc__product__details__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                    <div class="htc__product__details__tab__content">
+                        <!-- Start Product Big Images -->
+                        <div class="product__big__images">
+                            <div class="portfolio-full-image tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
+                                    <img id="img" src="/website/images/photo-1524666041070-9d87656c25bb.jpg" alt="full-image">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Product Big Images -->
+                        
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 smt-40 xmt-40">
+                    <div class="ht__product__dtl">
+                        <h1>My Account :  <%= whole_user.name %></h1>
+                    </ul>
+
+                     
+                       
+             
+                        <p class="pro__info">  Your profile information is safe with us.</p>
+                        <div class="ht__pro__desc">
+                            <div class="sin__desc">
+                                <p><span>First Name:</span> <%= whole_user.name %></p>
+                            </div>
+                            <div class="sin__desc align--left">
+                                <p><span>Phone Number:</span></p>
+                                <ul class="pro__cat__list">
+                                    <li><a href="#"><%= whole_user.phone_no %></a></li>
+                                </ul>
+                            </div>
+                            <div class="sin__desc align--left">
+                                <p><span>Email Id:</span></p>
+                                <ul class="pro__cat__list">
+                                    <li><a href="#"><%= whole_user.email %></a></li>
+                                </ul>
+                            </div>
+                            <div class="sin__desc align--left">
+                                <p><span>Resident of Region:</span></p>
+                                <ul class="pro__cat__list">
+                                    <li><a href="#">Punjab</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sin__desc align--left">
+                                <p><span>Account type:</span></p>
+                                <ul class="pro__cat__list">
+                                    <li><a href="#">Buyer </a></li>
+                                </ul>
+                            </div>
+                            <div class="sin__desc align--left">
+                                <form method="GET" action="/user/account/update" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <input name="user_img" type="file" id="change-avtar" class="form-control" required>
+                                     </div>
+                        
+                                     <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <span id="payment-button-amount">Submit</span>
+                                    </button>
+                                    
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Product Details Top -->
+</section>
+<!-- End Product Details Area -->
+<!-- Start Product Description -->
+<script>
+    let preview = function(){
+    $("#change-avtar").change(function(){
+        const reader = new FileReader();
+        let file = event.target.files[0];
+        
+        reader.readAsDataURL(file);
+        reader.addEventListener("load" , function(){
+            $("#img").attr("src" , this.result);
+            console.log(this , this.result);
+        })
+       
+})
+}
+
+preview();
+
+</script>

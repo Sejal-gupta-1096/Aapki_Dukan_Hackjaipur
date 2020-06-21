@@ -95,6 +95,9 @@
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
                                 <div class="header__right">
                                     <% if(locals.user){%>
+                                        <div class="header__account">
+                                            <a href="/user/account/"><i class="icon-user icons"></i></a>
+                                        </div>
                                         <h3 style="margin-right: 1rem;justify-content: center;"><a href="/user/logout">LogOut</a></h3>
                                     <% }else{ %>
                                         <h3 style="margin-right: 1rem;justify-content: center;"><a href="/login-register">SignUp</a></h3>
@@ -197,8 +200,8 @@
                                     <h2 class="title__line--2">information</h2>
                                     <div class="ft__inner">
                                         <ul class="ft__list">
-                                            <li><a href="about-us.html">About us</a></li>
-                                            <li><a href="about-us.html ">Terms  & Condition</a></li>
+                                            <li><a href="/about-us">About us</a></li>
+                                            <li><a href="/about-us ">Terms  & Condition</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -211,10 +214,10 @@
                                     <h2 class="title__line--2">Our service</h2>
                                     <div class="ft__inner">
                                         <ul class="ft__list">
-                                            <li><a href="MY ACCOUNT.html ">My Account</a></li>
-                                            <li><a href="cart.html">My Cart</a></li>
-                                            <li><a href="login.html ">Login</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="/user/account/ ">My Account</a></li>
+                                            <li><a href="/user/cart/view">My Cart</a></li>
+                                            <li><a href="/user/login-register ">Login</a></li>
+                                            <li><a href="/user/cart/checkout">Checkout</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -247,7 +250,7 @@
                             <div class="col-xs-12">
                                 <div class="copyright__inner">
                                     <p>Copyright© <a href="#">Socio-preneurs</a> 2020. All rights reserved.</p>
-                                    <a href="#"><img src="images/others/shape/paypol.png" alt="payment images"></a>
+                                    <a href="#"><img src="/website/images/paypol.png" alt="payment images"></a>
                                 </div>
                             </div>
                         </div>

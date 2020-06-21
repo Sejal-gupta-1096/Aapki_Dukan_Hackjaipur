@@ -1,8 +1,8 @@
+let amount = $(".amt");
+let qty = $(".qty")
+console.log(amount , qty)
+
 function totalAmount(){
-    
-    let amount = $(".amt");
-    let qty = $(".qty")
-    console.log(amount , qty)
     let sum = 0;
     for(let i = 0 ; i < amount.length ; i++){
         let t = eval(amount[i].innerHTML * qty[i].textContent);
@@ -14,17 +14,24 @@ function totalAmount(){
 }
 
 function totalAmountOfEachProduct(){
-    
-    let amount = $(".amt");
-    let qty = $(".qty");
     let total = $(".total");
     console.log(amount , qty , total)
-    let sum = 0;
     for(let i = 0 ; i < amount.length ; i++){
         total[i].innerHTML = eval(amount[i].innerHTML * qty[i].textContent);
         
     }
 }
 
+function checkoutTotal(){
+    let total = $(".total");
+    console.log(amount , qty , total)
+    let sum = 0;
+    for(let i = 0 ; i < amount.length ; i++){
+        let t  = eval(amount[i].innerHTML * qty[i].textContent);
+        sum = sum + t;
+    }
+    sum = sum + 9;
+    $(".tp").text(sum)
+}
+
 totalAmount();
-totalAmountOfEachProduct()

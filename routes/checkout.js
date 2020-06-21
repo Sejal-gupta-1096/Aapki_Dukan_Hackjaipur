@@ -7,10 +7,9 @@ const userController = require("../controllers/user_controller");
 
 
 router.get("/",userController.checkoutPage);
-//router.post("/add",userController.addToCart);
-//router.get("/delete",userController.deleteCartItem)
+router.post("/add",userController.addToCart);
+router.get("/delete",userController.deleteCartItem)
 //router.get("/update",userController.updateCartItem)
-//router.use("/checkout",require("./checkout"))
-
+router.post("/order",userController.placeOrder)
 //2)Exporting the router module
 module.exports = router;
